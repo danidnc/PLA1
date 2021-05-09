@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px 10px;
+  background: #9bb0d1;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li:hover {
+  color: darkgoldenrod;
+  cursor: pointer;
+}
