@@ -1,5 +1,5 @@
-import { IUser } from "./interfaces/interfaces.js";
-import {UsersData} from "./services/usersData.js";
+import { IUser } from "./interfaces/interfaces";
+import {UsersData} from "./services/usersData";
 
 let listItem : HTMLLIElement;
 let itemText : Text;
