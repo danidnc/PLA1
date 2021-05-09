@@ -1,23 +1,20 @@
 import { IUser } from "./interfaces/interfaces.js";
 import {UsersData} from "./services/usersData.js";
 
-let node : HTMLLIElement;
-let textNode : Text;
+let listItem : HTMLLIElement;
+let itemText : Text;
 
 const usuariosData : UsersData = new UsersData;
 const usuarios:IUser[] = usuariosData.getUsuarios();
-console.log(usuarios);
-console.log(usuarios[0].name);
-
 
 const lista = document.getElementById('listaUsuarios')! as HTMLUListElement;
 
 usuarios.forEach((usuario)=>{
-      node = document.createElement("li");
-      node.classList.add(`usuario${usuario.id}`);
-      textNode = document.createTextNode(usuario.name);
-      node.appendChild(textNode);
-      lista.appendChild(node);
+      listItem = document.createElement("li");
+      listItem.classList.add(`usuario${usuario.id}`);
+      itemText = document.createTextNode(usuario.name);
+      listItem.appendChild(itemText);
+      lista.appendChild(listItem);
 });
 
 document.getElementById('listaUsuarios')!.addEventListener('click',(e:Event)=>{
@@ -27,6 +24,7 @@ document.getElementById('listaUsuarios')!.addEventListener('click',(e:Event)=>{
       let id:number = parseInt(idSeleccionado);
       const usuario:IUser = usuariosData.getUsuariosById(id);
       const detalle = document.getElementById('detalle')! as HTMLParagraphElement;
-      detalle.textContent = `El usuario ${usuario.name} tiene como email : ${usuario.email}`;
-})
+      detalle.textContent = `El usuario ${usuario.name} tiene registrado el teléfono :
+      ${usuario.phone}`;
+});
 
