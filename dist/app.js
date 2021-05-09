@@ -15,15 +15,10 @@ usuarios.forEach((usuario) => {
 });
 document.getElementById('listaUsuarios').addEventListener('click', (e) => {
     const t = e.target;
-    console.log(t);
     let className = t.classList;
-    console.log(className[0]);
     let idSeleccionado = className[0].match(/\d+/g);
-    console.log(idSeleccionado);
     let id = parseInt(idSeleccionado);
-    console.log(id);
     const usuario = usuariosData.getUsuariosById(id);
-    console.log(usuario);
     const detalle = document.getElementById('detalle');
     detalle.textContent = `El usuario ${usuario.name} tiene como email : ${usuario.email}`;
 });
